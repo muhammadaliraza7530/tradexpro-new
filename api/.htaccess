@@ -1,0 +1,42 @@
+<IfModule mod_headers.c>
+    SetEnvIf Origin "https://trade-x-pro\.com$" origin_is_valid=$0
+    SetEnvIf Origin "http://127\.0\.0\.1:5500$" origin_is_valid=$0
+
+    Header always set Access-Control-Allow-Origin "%{origin_is_valid}e" env=origin_is_valid
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS" env=origin_is_valid
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With" env=origin_is_valid
+    Header always set Access-Control-Allow-Credentials "true" env=origin_is_valid
+</IfModule>
+
+
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Enforce HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+</IfModule>

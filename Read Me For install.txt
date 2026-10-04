@@ -1,0 +1,17 @@
+To install the script:
+Visit the following link in your browser:
+http://yourdomain.com/api/install
+(Replace "yourdomain.com" with your actual domain)
+
+To set up the Cron Job:
+Use this URL:
+https://yourdomain.com/api/cron
+(Replace "yourdomain.com" with your actual domain)
+
+Recommended Cron Job command (runs every minute):
+* * * * * curl -s https://yourdomain.com/api/cron
+
+Admin Username And  Password
+
+adminqq
+adminqq
