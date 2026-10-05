@@ -26,7 +26,7 @@
     <!-- Center Content: Logo & Loading State -->
     <div class="flex flex-col items-center justify-center space-y-4">
         <!-- App Logo -->
-        <img src="/public/logo/logo.png" alt="TradeXPro logo" class="w-16 h-16 object-contain animate-spin">
+        <img src="/public/logo/logo.png" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/static/logo/logo.png';}" alt="TradeXPro logo" class="w-16 h-16 object-contain animate-spin">
         <!-- Loading Text -->
         <div id="loading-status" class="text-[#F0B90B] font-semibold text-base tracking-wide" aria-live="polite">
             Loading...
@@ -45,7 +45,7 @@
 
             <!-- Centered App Identity -->
             <div class="col-start-2 flex items-center gap-2">
-                <img src="/public/logo/logo.png" alt="TradeXPro logo" class="w-8 h-8 object-contain">
+                <img src="/public/logo/logo.png" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/static/logo/logo.png';}" alt="TradeXPro logo" class="w-8 h-8 object-contain">
                 <div class="flex flex-col">
                     <span class="text-[#e1ae0d] font-medium text-sm">TradeXPro App</span>
                     <span class="text-white text-xs font-normal">Secure & Fast</span>

@@ -13,7 +13,7 @@
     <main class="login-layout">
         <section class="login-panel" aria-labelledby="signup-title">
             <header class="login-header">
-                <img class="login-logo" src="/public/logo/logo.png" alt="TradeXPro logo">
+                <img class="login-logo" src="/public/logo/logo.png" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/static/logo/logo.png';}" alt="TradeXPro logo">
                 <h1 id="signup-title">Sign Up</h1>
                 <p>Hey there! Ready to join the party? We just need a few details from you to get started. Let's do this!</p>
             </header>

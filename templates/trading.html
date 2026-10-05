@@ -14,7 +14,7 @@
     <main class="dashboard-shell">
         <header class="trading-header">
             <div class="brand">
-                <span class="brand-mark"><img src="/public/logo/logo.png" alt=""></span>
+                <span class="brand-mark"><img src="/public/logo/logo.png" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/static/logo/logo.png';}" alt="TradeXPro logo"></span>
                 <span>Trade X Pro</span>
             </div>
             <div class="trading-balance" aria-label="Available balance: zero dollars">
