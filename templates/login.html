@@ -13,7 +13,7 @@
     <main class="login-layout">
         <section class="login-panel" aria-labelledby="login-title">
             <header class="login-header">
-                <img class="login-logo" src="/public/logo/logo.png" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/static/logo/logo.png';}" alt="TradeXPro logo">
+                <img class="login-logo" src="{{ url_for('static', filename='logo/logo.png') }}" onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='/logo/logo.png';}else if(this.dataset.retry==1){this.dataset.retry=2;this.src='/public/logo/logo.png';}" alt="TradeXPro logo">
                 <h1 id="login-title">Log In</h1>
                 <p>After login you can Trade.</p>
             </header>
