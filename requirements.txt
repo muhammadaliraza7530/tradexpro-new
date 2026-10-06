@@ -1,0 +1,3 @@
+Flask==2.3.2
+# mysql-connector-python  # Paused during frontend-only work
+# python-dotenv  # Paused during frontend-only work
